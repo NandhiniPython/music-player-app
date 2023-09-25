@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        .navbar, .directors {
+            background-color: rgb(2, 2, 135); 
+        }
+
+        .music  {
+            background-color: lightskyblue;
+        }
+
+        h1, h2, h3  {
+            color: rgb(1, 1, 135);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-md border-bottom"  data-bs-theme="dark">
+        <div class="container">
+
+            <a class="navbar-brand" href="#">Music</a>  
+          
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="#offcanvas" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="#offcanvas" aria-labelledby="#offcanvasLabel">
+            <div class="offcanvas-header">
+              <h5 class="offcanvas-title" id="#offcanvasLabel">Aperture</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav flex-grow-1 justify-content-between">
+                <li class="nav-item"><a class="nav-link" href="#">
+                  <svg class="bi" width="24" height="24"><use xlink:href="#aperture"></use></svg>
+                </a></li>
+                <li class="nav-item"><a class="nav-link" href="#">All</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Podcast</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Favorite Singers</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Music Old</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Music New</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Top Albums</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Top Playlists</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">
+                  <svg class="bi" width="24" height="24"><use xlink:href="#cart"></use></svg>
+                </a></li>
+              </ul>
+              <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+
+      <section id="title" class="music">
+        <div class="container col-xxl-10 px-4 pt-5 pb-5">
+          <div class="row flex-lg flex-lg-row-reverse g-5 pt-5">
+            <h1 class="display-2 text-center fw-bold mb-5">The World's Best Music App</h1>
+            
+            <div class="col-10 col-md-8 col-lg-6">
+              <img class="d-block mx-lg-auto img-fluid" src="./images/madavan.jpg" alt="iphone" height="200">
+            </div>
+            <div class="col-lg-6">
+              <h2 class="display-6 mb-3 fw-normal"> <b>Film:</b> Alaipayuthey</h2>
+              <h2 class="display-6 mb-5 fw-normal"> <b>Song:</b> Enderndrum Punnagai</h2>
+
+              <div class="_md playerCtr">
+                <div class="time sm-hide">
+                    <span class="_a">00:00</span>
+                    <span class="sepr">/</span>
+                    <span class="_b">00:00</span>
+                </div>
+                <button title="Repeat" class="repeat sm-hide r_off ">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <path class="svg_color" fill="#000" fill-rule="evenodd" d="M18.5 13.024V18H8.302v2L5 17.532l3.302-2.46V17H17.5v-3.976h1zM16.698 4L20 6.468l-3.302 2.46V7H7.5v3.976h-1V6h10.198V4z"></path>
+                    </svg>
+                </button>
+                <button title="Previous Song" class="prev sm-hide ">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <g class="svg_color" fill="#000" transform="translate(-655 -2658) translate(87 2624)"><g transform="translate(520 29) rotate(-180 32.714 12.5)"><path d="M5.187 2.955L12.588 12.834 -2.215 12.834z" transform="rotate(90 5.187 7.895)"></path><rect width="1.482" height="14.803" x="9.632" y=".74" rx=".741"></rect></g>
+                        </g>
+                    </svg>
+                </button>
+                <button title="Play" class="play false">
+                    <svg width="24" height="24" viewBox="0 0 15 30">
+                        <path class="svg_color" fill-rule="evenodd" d="M0 0v24l20-12z"></path>
+                    </svg>
+                </button>
+                <button title="Next Song" class="next sm-hide ">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <g class="svg_color" fill="#000" transform="translate(-655 -2658) translate(87 2624)"><g transform="translate(520 29) rotate(-180 32.714 12.5)">
+                            <path d="M5.187 2.955L12.588 12.834 -2.215 12.834z" transform="rotate(90 5.187 7.895)"></path><rect width="1.482" height="14.803" x="9.632" y=".74" rx=".741"></rect></g>
+                        </g>
+                    </svg>
+                </button>
+                <button title="Shuffle" class="shuffle sm-hide s_off ">
+                    <svg width="24" height="24" viewBox="0 0 24 24">
+                        <g fill="none" fill-rule="evenodd">
+                            <path class="svg_color" fill="#000" d="M19 5.163l-.645 4.36-1.552-1.552L5.626 19.15l-.62-.62L16.186 7.352l-1.55-1.55L19 5.163zm-4.602 8.386l2.443 2.443 1.514-1.514.64 4.365-4.36-.644 1.588-1.588-2.445-2.443.62-.62zM5.628 4.85l5.064 5.065-.62.62L5.008 5.47l.62-.62z"></path>
+                        </g>
+                    </svg>
+                </button>
+            </div>
+
+              <div class="d-grid gap-3 d-md-flex justify-content-md-start pt-5">
+    
+                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Download</button>
+                <button type="button" class="btn btn-primary btn-lg px-4 me-md-2">Play</button>
+              </div>
+            </div>
+    
+          </div>
+        </div>
+      </section>
+
+      <section id="bottom" class="directors">
+        <div class="container pt-5 pb-5">
+            <div class="row">
+                <h2 class="display-3 text-center text-white">Select your Favorite Music Director</h2>
+                <h3 class="mb-5 text-center fw-normal text-white pb-5">Enjoy with your Favorite Songs</h3>
+                <div class="col-lg-4 text-center">
+                  <img class="d-block mx-lg-auto img-fluid rounded-circle" src="./images/ar-rahman.jpeg" alt="AR Rahman">
+                  <h2 class="fw-normal text-white pt-3">A R Rahman</h2>
+                  <p class="text-white">Lorem ipsum dolor sit amet, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <p><a class="btn btn-secondary" href="#">View details »</a></p>
+                </div>
+
+                <div class="col-lg-4 text-center">
+                    <img class="d-block mx-lg-auto img-fluid rounded-circle" src="./images/ilayaraja.jpeg" alt="Ilayaraja">
+                  <h2 class="fw-normal text-white pt-3">Ilayaraja</h2>
+                  <p class="text-white">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                  <p><a class="btn btn-secondary" href="#">View details »</a></p>
+                </div>
+
+                <div class="col-lg-4 text-center">
+                    <img class="d-block mx-lg-auto img-fluid rounded-circle" src="./images/anirudh.jpeg" alt="AR Rahman">
+                  <h2 class="fw-normal text-white pt-3">Anirudh</h2>
+                  <p class="text-white">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                  <p><a class="btn btn-secondary" href="#">View details »</a></p>
+                </div>
+            </div>
+        </div>
+      </section>
+
+
+    
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>  
+</body>
+</html>
